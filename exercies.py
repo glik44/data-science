@@ -1,8 +1,6 @@
 def xor(a,b):
     return (a and (not b)) or ((not a) and b)
 
-def ex13(num):
-
 def ex12(letter1, letter2):
     print(letter1.upper())
     print(letter2.isdigit())
@@ -76,6 +74,12 @@ def subset_sum(numbers, target, partial=[], partial_sum=0):
         yield from subset_sum(remaining, target, partial + [n], partial_sum + n)
 
 
+def fibonachi(n):
+    return [i+j for i,j in zip(range(n),range(1,n))]
+
+def prime(n):
+    return [x for x in range(2,n) if all(x % y != 0 for y in range(2,x))]
+
 if __name__ == '__main__':
     # ex12('t','8')
     # ex14()
@@ -92,3 +96,5 @@ if __name__ == '__main__':
     print(xor(False, True))
     print(xor(True, False))
     print(xor(True, True))
+
+    print(prime(10))
